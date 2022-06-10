@@ -97,18 +97,21 @@ const removerProduto = (id) => {
 }
 const editarProduto = (id) => {
     const produtos = recuperarLocalStorage();
-    const indexProduto = produtos.findIndex((produto) => produto.id === id)
+    const indexProduto = produtos.findIndex((produto) => produto.id === id && produto.usuarioId === usuarioId)
     form.nome.value = produtos[indexProduto].nome;
     form.preco.value = produtos[indexProduto].preco;
     form.prime.checked = produtos[indexProduto].prime;
-    idx = id
+    idx = id;
 }
 atualizarProduto = (id, produto) => {
     const produtos = recuperarLocalStorage();
-    const indexProduto = produtos.findIndex((produto) => produto.id === id);
+    const indexProduto = produtos.findIndex((produto) => produto.id === id && produto.usuarioId === usuarioId);
     produtos[indexProduto] = produto;
     atualizarLocalStorage(produtos);
 }
+
+form === null || form === void 0 ? void 0: form.addEventListener('submit', salvarProduto);
+document.addEventListener('DOM ContentLoaded', preencherTabela);
 
 form.addEventListener('submit', salvarProduto)
 document.addEventListener('DOMContentLoaded', preencherTabela);
