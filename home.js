@@ -110,9 +110,6 @@ atualizarProduto = (id, produto) => {
     atualizarLocalStorage(produtos);
 }
 
-form === null || form === void 0 ? void 0: form.addEventListener('submit', salvarProduto);
-document.addEventListener('DOM ContentLoaded', preencherTabela);
-
 form.addEventListener('submit', salvarProduto)
 document.addEventListener('DOMContentLoaded', preencherTabela);
 let sair = document.querySelector('#sair');
